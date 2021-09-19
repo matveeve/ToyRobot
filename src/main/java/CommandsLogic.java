@@ -1,28 +1,32 @@
 public class CommandsLogic {
 
-    public static void changePosition(Position position, String strings) {
-        String[] commandArray = strings.split(" ");
-        String commandString = commandArray[0];
 
-        Command command = Command.valueOf(commandString);
-        switch (command) {
-            case PLACE:
-                break;
-            case MOVE:
-                CommandsLogic.move(position);
-                break;
-            case LEFT:
-                CommandsLogic.turnLeft(position);
-                break;
-            case RIGHT:
-                CommandsLogic.turnRight(position);
-                break;
-            case REPORT:
-                printReport(position);
-                break;
-            default:
-                System.out.println("Wrong command.");
+    public static void changePosition(Position position, String strings) {
+
+        String commandString = getCommandString(strings);
+
+        if (commandString != null && ValidationLogic.isValidCommand(commandString)) {
+            switch (Command.valueOf(commandString)) {
+                case PLACE:
+                    break;
+                case MOVE:
+                    CommandsLogic.move(position);
+                    break;
+                case LEFT:
+                    CommandsLogic.turnLeft(position);
+                    break;
+                case RIGHT:
+                    CommandsLogic.turnRight(position);
+                    break;
+                case REPORT:
+                    printReport(position);
+                    break;
+            }
         }
+    }
+
+    private static String getCommandString(String strings){
+        return strings == null ? null : strings.split(" ")[0];
     }
 
     private static void printReport(Position position) {
@@ -38,35 +42,36 @@ public class CommandsLogic {
 
     static void move(Position position) {
 
-        if (position.getFacing() == null) {
-            System.out.println("No facing is set.");
-        }
-        int moveNumber;
-        switch (position.getFacing()) {
-            case NORTH:
-                moveNumber = position.getDimensionY() + 1;
-                if (ValidationLogic.isValidMoveNumber(moveNumber)) {
-                    position.setDimensionY(moveNumber);
-                }
-                break;
-            case SOUTH:
-                moveNumber = position.getDimensionY() - 1;
-                if (ValidationLogic.isValidMoveNumber(moveNumber)) {
-                    position.setDimensionY(moveNumber);
-                }
-                break;
-            case EAST:
-                moveNumber = position.getDimensionX() + 1;
-                if (ValidationLogic.isValidMoveNumber(moveNumber)) {
-                    position.setDimensionX(moveNumber);
-                }
-                break;
-            case WEST:
-                moveNumber = position.getDimensionX() - 1;
-                if (ValidationLogic.isValidMoveNumber(moveNumber)) {
-                    position.setDimensionX(moveNumber);
-                }
-                break;
+        if (position != null && position.getFacing() != null
+        && ValidationLogic.isValidFacing(position.getFacing().name())) {
+
+            int moveNumber;
+            switch (position.getFacing()) {
+                case NORTH:
+                    moveNumber = position.getDimensionY() + 1;
+                    if (ValidationLogic.isValidMoveNumber(moveNumber)) {
+                        position.setDimensionY(moveNumber);
+                    }
+                    break;
+                case SOUTH:
+                    moveNumber = position.getDimensionY() - 1;
+                    if (ValidationLogic.isValidMoveNumber(moveNumber)) {
+                        position.setDimensionY(moveNumber);
+                    }
+                    break;
+                case EAST:
+                    moveNumber = position.getDimensionX() + 1;
+                    if (ValidationLogic.isValidMoveNumber(moveNumber)) {
+                        position.setDimensionX(moveNumber);
+                    }
+                    break;
+                case WEST:
+                    moveNumber = position.getDimensionX() - 1;
+                    if (ValidationLogic.isValidMoveNumber(moveNumber)) {
+                        position.setDimensionX(moveNumber);
+                    }
+                    break;
+            }
         }
     }
 

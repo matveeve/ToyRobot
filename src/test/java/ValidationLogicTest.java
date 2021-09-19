@@ -1,4 +1,4 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -52,7 +52,7 @@ public class ValidationLogicTest {
 
     @Test
     public void isPlaceCommandWithNoCommandTest() {
-        assertFalse(ValidationLogic.isValidPlaceCommand( "1,1,SOUTH"));
+        assertFalse(ValidationLogic.isValidPlaceCommand("1,1,SOUTH"));
     }
 
     @Test

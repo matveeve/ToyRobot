@@ -1,5 +1,4 @@
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -7,6 +6,8 @@ import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ToyRobotTest {
 
@@ -36,13 +37,7 @@ public class ToyRobotTest {
 
         System.out.flush();
         System.setOut(oldOutput);
-
-        String message = new StringBuilder()
-                .append("Assert the output for file commands")
-                .append(fileNumber)
-                .append(".txt")
-                .toString();
-        Assert.assertEquals(message, expectedOutput, byteArrayOutputStream.toString());
+        assertEquals(expectedOutput, byteArrayOutputStream.toString());
     }
 
     private void runTest(int fileNumber) {

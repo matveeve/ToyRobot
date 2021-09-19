@@ -9,7 +9,7 @@ public class ValidationLogic {
         return moveNumber >= 0 && moveNumber <= 4;
     }
 
-    private static boolean isValidFacing(String facingString) {
+    static boolean isValidFacing(String facingString) {
 
         for (Facing facing : Facing.values()) {
             if (facing.name().equals(facingString)) {
@@ -26,13 +26,11 @@ public class ValidationLogic {
             String[] commandArray = commandString.split(" ");
 
             // command && position
-            if(commandArray.length == 2 && Command.PLACE.name().equals(commandArray[0])) {
+            if (commandArray.length == 2 && Command.PLACE.name().equals(commandArray[0])) {
 
                 String[] array = commandArray[1].split(",");
                 // x,y,facing
-                if (array.length == 3 && isNumeric(array[0]) && isNumeric(array[1])) {
-                    return true;
-                }
+                return array.length == 3 && isNumeric(array[0]) && isNumeric(array[1]);
             }
         }
         return false;
@@ -43,10 +41,21 @@ public class ValidationLogic {
             return false;
         }
         try {
-            int number = Integer.parseInt(strNum);
+            Integer.parseInt(strNum);
         } catch (NumberFormatException nfe) {
             return false;
         }
         return true;
+    }
+
+    static boolean isValidCommand(String commandString) {
+        try {
+            Command.valueOf(commandString);
+        } catch (IllegalArgumentException ex) {
+            return false;
+        }
+        return true;
+
+
     }
 }
