@@ -10,6 +10,7 @@ public class CommandsLogic {
         if (commandString != null && ValidationLogic.isValidCommand(commandString)) {
             switch (Command.valueOf(commandString)) {
                 case PLACE:
+                    position = Position.getPosition(strings);
                     break;
                 case MOVE:
                     CommandsLogic.move(position);

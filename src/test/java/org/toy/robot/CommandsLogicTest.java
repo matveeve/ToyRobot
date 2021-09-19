@@ -28,9 +28,9 @@ class CommandsLogicTest {
     @Test
     void changePositionWithPlaceCommandTest() {
         CommandsLogic.changePosition(position, "PLACE 1,1,SOUTH");
-        assertEquals(Facing.NORTH, position.getFacing());
-        assertEquals(0, position.getDimensionX());
-        assertEquals(0, position.getDimensionY());
+        assertEquals(Facing.SOUTH, position.getFacing());
+        assertEquals(1, position.getDimensionX());
+        assertEquals(1, position.getDimensionY());
     }
 
     @Test
@@ -44,9 +44,9 @@ class CommandsLogicTest {
     @Test
     void changePositionWithNullPositionTest() {
         CommandsLogic.changePosition(null, "PLACE 1,1,SOUTH");
-        assertEquals(Facing.NORTH, position.getFacing());
-        assertEquals(0, position.getDimensionX());
-        assertEquals(0, position.getDimensionY());
+        assertEquals(Facing.SOUTH, position.getFacing());
+        assertEquals(1, position.getDimensionX());
+        assertEquals(1, position.getDimensionY());
     }
 
     @Test
