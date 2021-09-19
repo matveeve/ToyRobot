@@ -73,17 +73,18 @@ Expected output
 git clone github.com/matveeve/ToyRobot.git
 ```
 3. Go to the app directory:
-
-   ```cd ToyRobot```
+```
+3. cd ToyRobot
+```
 4. Build the project:
-
- ```mvn package```
+ ```
+mvn package
+```
 5. Execute the app in the command line:
-
-```java -jar target/ToyRobot-1.0-SNAPSHOT.jar```
-
+```
+5. java -jar target/ToyRobot-1.0-SNAPSHOT.jar
+```
 6. Copy the sequence of commands and paste in the command line, for example:
-
 ```
 PLACE 2,3,SOUTH
 MOVE
