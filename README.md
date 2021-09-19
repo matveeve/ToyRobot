@@ -64,9 +64,12 @@ Expected output
 ## Setup
 
 1. Make sure you have Java 11, Maven and git installed on your machine. 
-   If you need help installing Java, take a look at the [official installation guide](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/windows-7-install.html).
-   If you need help installing Maven, take a look at the [official installation guide](https://maven.apache.org/install.html).
-   If you need help installing git, take a look at the [official installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+If you need help installing Java, take a look at the [official installation guide](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/windows-7-install.html).
+
+If you need help installing Maven, take a look at the [official installation guide](https://maven.apache.org/install.html).
+
+If you need help installing git, take a look at the [official installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 2. Clone this repo with git:
 ```
@@ -84,10 +87,10 @@ mvn package
 ```
 java -jar target/ToyRobot-1.0-SNAPSHOT.jar
 ```
-6. Copy the sequence of commands and paste in the command line, for example:
+6. Copy the sequence of commands and paste in the command line and push Enter, for example:
 ```
 PLACE 2,3,SOUTH
 MOVE
 REPORT
 ```
-7. Push Enter.
+7. To stop the application close the console window.
