@@ -74,7 +74,7 @@ git clone github.com/matveeve/ToyRobot.git
 ```
 3. Go to the app directory:
 ```
-3. cd ToyRobot
+ cd /ToyRobot
 ```
 4. Build the project:
  ```
@@ -82,7 +82,7 @@ mvn package
 ```
 5. Execute the app in the command line:
 ```
-5. java -jar target/ToyRobot-1.0-SNAPSHOT.jar
+java -jar target/ToyRobot-1.0-SNAPSHOT.jar
 ```
 6. Copy the sequence of commands and paste in the command line, for example:
 ```
