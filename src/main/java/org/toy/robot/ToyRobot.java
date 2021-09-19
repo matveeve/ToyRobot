@@ -1,3 +1,4 @@
+package org.toy.robot;
 import java.util.Scanner;
 
 public class ToyRobot {

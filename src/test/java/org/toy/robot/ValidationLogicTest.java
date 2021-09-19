@@ -1,4 +1,7 @@
+package org.toy.robot;
+
 import org.junit.jupiter.api.Test;
+import org.toy.robot.ValidationLogic;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

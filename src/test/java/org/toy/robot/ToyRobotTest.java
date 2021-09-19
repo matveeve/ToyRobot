@@ -1,4 +1,7 @@
+package org.toy.robot;
+
 import org.junit.jupiter.api.Test;
+import org.toy.robot.Position;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

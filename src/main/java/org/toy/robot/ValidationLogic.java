@@ -1,3 +1,5 @@
+package org.toy.robot;
+
 public class ValidationLogic {
 
     static boolean isValidPosition(int dimensionX, int dimensionY, String facing) {

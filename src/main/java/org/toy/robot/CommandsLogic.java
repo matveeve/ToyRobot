@@ -1,3 +1,5 @@
+package org.toy.robot;
+
 public class CommandsLogic {
 
 

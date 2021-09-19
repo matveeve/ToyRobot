@@ -1,3 +1,5 @@
+package org.toy.robot;
+
 public class Position {
 
     private static Position position;
