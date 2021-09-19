@@ -20,7 +20,33 @@ public class ValidationLogic {
         return false;
     }
 
-    static boolean isPlaceCommand(String[] commandArray){
-        return Command.PLACE.name().equals(commandArray[0]) && commandArray.length == 2; // command && x,y,facing
+    static boolean isValidPlaceCommand(String commandString) {
+        if (commandString != null) {
+
+            String[] commandArray = commandString.split(" ");
+
+            // command && position
+            if(commandArray.length == 2 && Command.PLACE.name().equals(commandArray[0])) {
+
+                String[] array = commandArray[1].split(",");
+                // x,y,facing
+                if (array.length == 3 && isNumeric(array[0]) && isNumeric(array[1])) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            int number = Integer.parseInt(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
     }
 }

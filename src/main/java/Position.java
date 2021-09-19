@@ -25,20 +25,13 @@ public class Position {
         return position;
     }
 
-    public static Position getPosition(String string) {
-        String[] commandArray = string.split(" ");
+    public static Position getPosition(String commandString) {
 
-        if (ValidationLogic.isPlaceCommand(commandArray)) {
-            String[] array = commandArray[1].split(",");
-            if (array.length == 3) { // x,y,facing
-                Integer dimensionX = Integer.parseInt(array[0]);
-                Integer dimensionY = Integer.parseInt(array[1]);
-                String facing = array[2];
+        if (ValidationLogic.isValidPlaceCommand(commandString)) {
 
-                if (dimensionX != null && dimensionY != null && facing != null) {
-                    position = Position.getPosition(dimensionX, dimensionY, facing);
-                }
-            }
+            String[] array = commandString.split(" ")[1].split(",");
+            position = Position.getPosition(Integer.parseInt(array[0]), Integer.parseInt(array[1]), array[2]);
+
         }
         return position;
     }
