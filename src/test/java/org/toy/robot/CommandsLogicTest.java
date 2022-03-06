@@ -2,9 +2,6 @@ package org.toy.robot;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.toy.robot.CommandsLogic;
-import org.toy.robot.Facing;
-import org.toy.robot.Position;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

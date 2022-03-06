@@ -1,7 +1,6 @@
 package org.toy.robot;
 
 import org.junit.jupiter.api.Test;
-import org.toy.robot.Position;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -45,8 +44,7 @@ public class ToyRobotTest {
 
     private void runTest(int fileNumber) {
         List<String> lines = null;
-        String fileName = new StringBuilder()
-                .append("commands")
+        String fileName = new StringBuilder("commands")
                 .append(fileNumber)
                 .append(".txt")
                 .toString();
@@ -55,6 +53,7 @@ public class ToyRobotTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        assert lines != null;
         Position position = Position.getPosition(lines.get(0));
         for (String line : lines) {
             position.changePosition(line);

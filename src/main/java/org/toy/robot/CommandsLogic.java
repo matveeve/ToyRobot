@@ -10,7 +10,7 @@ public class CommandsLogic {
         if (commandString != null && ValidationLogic.isValidCommand(commandString)) {
             switch (Command.valueOf(commandString)) {
                 case PLACE:
-                    position = Position.getPosition(strings);
+                    Position.getPosition(strings);
                     break;
                 case MOVE:
                     CommandsLogic.move(position);
@@ -33,8 +33,7 @@ public class CommandsLogic {
     }
 
     private static void printReport(Position position) {
-        StringBuilder strBuilder = new StringBuilder()
-                .append("Output: ")
+        StringBuilder strBuilder = new StringBuilder("Output: ")
                 .append(position.getDimensionX())
                 .append(", ")
                 .append(position.getDimensionY())
